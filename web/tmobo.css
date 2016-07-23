@@ -1,0 +1,152 @@
+
+body {
+        background-color: #3A3F6E;
+        color: #BFC0C9;
+
+}
+
+p {
+        font-size: 12pt;
+	font-family:  arial,helvetica;
+	text-decoration: none;
+        color: #BFC0C9;
+	text-align: justify;
+}
+
+h1 {
+        font-size: 18pt;
+	font-family:  arial,helvetica;
+	text-decoration: none;
+        color: #C0C0FF;
+	text-align: left;
+}
+
+h2 {
+        font-size: 14pt;
+	font-family:  arial,helvetica;
+	text-decoration: none;
+        color: #A0A0FF;
+	text-align: left;
+}
+
+li {
+        font-size: 12pt;
+	font-family:  arial,helvetica;
+	text-decoration: none;
+        color: #BFC0C9;
+	text-align: left;
+}
+
+
+
+A {
+
+        color: #8080FF;
+        font-size: 12pt;
+        font-family: Verdana, Georgia, Times New Roman, Times, serif;
+	text-decoration: underline;
+}
+
+A:hover
+{
+	color: #F0F0FF;
+	font-size: 12pt;
+	font-family: Verdana, Georgia, Times New Roman, Times, serif;
+	text-decoration: underline:italic;
+}
+
+.aodd {
+
+        color: #202020;
+        font-size: 12pt;
+        font-family: Verdana, Georgia, Times New Roman, Times, serif;
+	text-decoration: underline;
+}
+
+
+.pdate
+{
+    font-size: 9pt;
+    font-family:  arial,helvetica;
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
+
+.commentEven
+{
+   color: #FFFFFF;
+   background-color: #442244;
+   padding:          5px;
+
+}
+.commentOdd
+{
+   color: #000000;
+   background-color: #889988;
+   padding:           5px;
+
+}
+
+.commentOutline
+{ 
+  background-color: #000000;
+  padding: 1px;
+ }
+
+.commentTable
+{ 
+  width:            625px;  
+  color:            #000000;
+  background-color: #a0a0cF;
+ }
+
+.commentLabel
+{ 
+
+  color:              #C0C0FF;
+  background-color:   #40406F;
+  font-weight:       bold;
+  width:             175px;
+  padding:           2px;
+  text-align:        right;
+  vertical-align:    top;
+ }
+
+.commentBox
+{
+   width:            450px;
+   color:            #FFFFFF;
+   border:           2px;
+   background-color: black;
+   padding:          2px;
+
+}
+.commentPostPwd
+{ 
+   width:            100px;
+   color:            #FFFFFF;
+   border:           2px;
+   background-color: black;
+   padding:          2px;
+}
+
+.commentEntry
+{
+   width:            450px;
+   color:            #FFFFFF;
+   font-size: 12pt;
+   font-family:  arial,helvetica;
+
+   border:           2px;
+   background-color: #000000;
+   padding:          2px;
+
+}
+
+.dol
+{ 
+  color:           #000000;
+ }

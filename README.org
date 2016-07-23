@@ -1,0 +1,26 @@
+#+TITLE: Camera Phone Blog
+
+Purpose: This is an archive of an old camera phone blog project I wrote in 2003.
+
+NOTE: This is for historical purposes. It will not work out of box.
+
+README: For the blog entry on this, see: [[http://craigulmer.com/index.pl?id=camera_phone_blog][CraigUlmer.com]]
+
+
+* About
+
+Back in 2003 I bought a cell phone that had a camera attachment (you literally had to plug the camera into the cell phone when you wanted to take pictures). Like a lot of people I immediately wanted to break free from what the cell phone company wanted you to do with the camera, so I wrote some scripts to implement a simple camera phone blog. Basically, the camera sent a picture in a mime-encoded email to a server and a cron script on the server would notice the email and unpack the image to a directory on the server. A simple cgi script then provided a way for users to look at the different pictures in reverse chronological order. A few years later I added the ability for folks to comment on the pictures. It's all very crude, but a little bit of scripting went a long way when the web first got going.
+
+* Code Notes
+
+I don't use these scripts anymore, nor expect anyone to use them. However, for completeness, here are some basic notes on what things are supposed to be doing.
+
+** Cron Job Script
+The first thing you need is a cron script like the ones in cron/. Originally my provider used pop, but they wound up switching to imap. The cron script looks at your mail directory and processes anything that's new. It checks the from field to make sure it came from one of the allowed addresses and then extracts out the mime encoded images. It calls imagemagik to rescale the images to a max size, and renames the images to a timestamp to keep the images in temporal order. The original messages are kept in a folder in case something went wrong.
+
+I was paranoid about something going wrong with the cron script (especially since email was involved) so I setup a dedicated email/shell account for doing the cron work. This account also helped obfuscate the process (ie, its harder for a friend to rick roll you when they don't know the email address you're using). One hardship of this was that I had to do some symlink kinds of things to make the picture directories from the cronjob visible to the web server.
+
+** Web Scripts
+There are three parts to the web interface. First there are some static html/css pages (in web) for the generic web stuff. This stuff is so old it uses html frames and includes some text on my original camera. Second, there's a script (cgi-bin/phone.cgi) that's responsible for dumping out the images in a blog-like ordering. This script does the standard index kind of stuff to let users walk around. Finally, there's a comment script (cgi-bin/phone-comment.cgi) script that lets users look at and write comments. The comment system is simple and just uses plain text files to house comments. I wound up putting a posting password in this script because some SEO jerk filled me with spam links at some point. If you use this, just put your own phrase in, md5 digest the missing word, and put the hex value in the script.
+
+

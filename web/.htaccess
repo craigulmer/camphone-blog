@@ -1,0 +1,4 @@
+#Added option to follow symbolic links in order to get to
+#where the photos are located. Also added disabling of index
+Options +FollowSymLinks
+Options All -Indexes

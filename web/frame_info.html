@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>T-Mobile Info</title>
+    <link rel="stylesheet" href="./tmobo.css" type="text/css">
+
+  </head>
+
+  <body>
+
+<br>
+
+<table>
+<tr>
+<td width=600>
+
+<h1>T-Mobile Blog Info</h1>
+
+
+<p>So.. Amy and I decided the other day to join the 1990's by buying
+a cell phone and service. After mulling through the different providers,
+standards, and phones, we settled on
+<a href=http://www.tmobile.com/>T-Mobile</a>. They've got reception covering 
+most of the US, GSM phones that will work elsewhere in the world, and ok 
+plans. They're probably just as slimy as other providers, but I'm willing 
+to give them a try for a little while at least.</p>
+
+<p>As you've probably seen, T-Mobile has been pushing its new camera phones
+in their TV ads. In theory you point the camera phone at some antique at
+a yard sale, send a picture to MoMA, and then laugh with the curator
+at how you're going to swindle someone out of a lot of money. Being a
+swindler at heart, I naturally wanted a camera-phone to go along with
+the T-Mobile service. I figured in the worst case, the phone will be
+paying for itself in no time.</p>
+
+<p>The problem with my plan was that I didn't happen to know any 
+museum curators to whom I could send photos. Or for that matter, anyone
+else with a picture phone that could display my photos. I do know
+plenty of people with E-mail (which you the phone can send photos to), 
+but most of them have AI-like spam filters that would destroy my 
+silly picture emails because they smell like spam. (on a side-note, I
+think the Kellegous's filters have become self aware and are now trying
+takeover Ecuador's banking network). What could I do?</p>
+
+<H2>T-Mobile "'Blog"</H2>
+
+<p>The answer was... how about setting up some scripts so I could have the
+photos posted to a web page on AngryNoodle? Hmm.. It didn't seem like it
+would be that hard to do.. and it kind of opens up a lot of blogging
+possibilities, right? I mean, I can take the phone with me, snap a
+few photos, and have them pop up on the web without having to do all
+the crap I have to do to make the regular AN entries look right. This
+would also be a Great Thing for me, because Amy and I were about to drive
+across the country and: (a) wanted to keep people posted about our progress,
+and (b) we knew we probably wouldn't have much email access on the road.
+Using the phone to take pictures seemed like a great idea.</p>
+
+<p>Previous experience has made one thing clear to me: if it's a Great Idea,
+then somebody else has already thought of it, built it, and probably
+put the code up on the web somewhere. I scoured the web looking for
+anything that looked like what I was doing, but came up empty handed. Nuts.
+Next, I poked my coding guru buddies 
+<a href=http://www.johnlockhart.com>John Lockhart</a> and
+<a href=http://www.kellegous.com>The Kellegous</a>, to see
+if they had any tips, ideas, or code that I could start with. They
+both thought it was a pretty cool idea, and began sending me fragments on
+the spot.</p> 
+
+<h2>Building it</h2>
+
+<p>After talking with the guys, we knew that there were basically three
+things that needed to be done:</p>
+
+<ul>
+<li>The server has to detect a new picture email (and filter out 
+bad reqs, which believe me, I'm sure The Kellegous will be sending).</li>
+<li>The server had to extract the picture to somewhere on the server.</li>
+<li>A basic web page needed to automatically display the pictures</li>
+</ul>
+
+<p>Our first thought was to use procmail to call a script every time
+a new email came to the server. Unfortunately, this was a dead-end,
+because my web provider doesn't support it (plus I don't understand
+all that procmail mumbo-jumbo stuff). Therefore, we decided just to
+write up the guts of the stuff as a perl script and run it as a 
+cron job. I started with some code John sent for parsing a mailbox
+for mime messages, and then added some stuff to make it work with 
+my setup. The script checks a local mail file, searches for messages
+sent by a particular account, and extracts mime messages to a particular
+destination on the server. The script will extract all the valid pictures
+in the mail file and archive the mailbox (ie, so the same message doesn't
+get posted twice, and entries are backed up in case there's an error).
+The last task in the project was much easier, I just cooked up a
+cgi script to display all the pictures in a directory, in the order 
+that they were posted.</p>
+
+<h2>Voila</h2>
+
+<p>And.. voila. There you have it. It's nothing all that fancy
+(or incredibly secure), but it works for now. I had thoughts about
+modifying it so that I could also send text messages and have them
+posted (you can send text emails with T-mobile) , but.. my experience
+so far has been that it's just too painful to key text messages in
+on the lousy phone keypad.</p>
+
+<p>The T-Mobile picture blog has been running for a couple of months
+now, and so far we're pretty happy with it. It helped make out
+drive across country a lot of fun- friends and family emailed us to
+say that they would tune in every so often to see where exactly
+we were. My only regret on the drive is.. we just couldn't find that
+many interesting places to take pictures of. Since the drive we've
+been using it rather sporadically. I kind of like taking pictures
+of weird places (and not providing any text explaining what's
+going on). If you look close (and sometimes at the "posted" dates),
+you should be able to figure them out.</p>
+
+<h2>Mad Props</h2>
+
+<p>As usual, the mad props must go to 
+<a href-http://www.johnlockhart.com>John</a> and
+<a href=http://www.kellegous.com>Kelly</a> for helping
+me out with all this. If you're looking to hire someone to do your
+web services, you should check out John's 
+<a href=http://www.sniglets.com>Sniglets</a> company. Er.. if
+you work for a University or school, and need an excellent
+admissions tracking system, check out The Kellegous's
+<a href=http://www.connexxia.com>Connexia</a> company. If you
+want abuse and pasta tips, go to 
+<a href=http://www.angrynoodle.com>Angry Noodle</a>.
+
+</td>
+</tr>
+</table>
+
+    <hr>
+    <address><a href="mailto:grimace@OCONNOR"></a></address>
+<!-- Created: Sat Jun 21 12:40:54 Pacific Daylight Time 2003 -->
+<!-- hhmts start -->
+Last modified: Sun Aug 10 10:54:40 Pacific Daylight Time 2003
+<!-- hhmts end -->
+  </body>
+</html>
